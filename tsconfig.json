@@ -4,6 +4,10 @@
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx",
     "module": "NodeNext",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "moduleResolution": "NodeNext",
     "types": [
       "node"
     ],

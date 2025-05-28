@@ -10,7 +10,10 @@
   },
   "dependencies": {
     "@hono/node-server": "^1.14.3",
-    "hono": "^4.7.10"
+    "@hono/zod-openapi": "^0.19.7",
+    "hono": "^4.7.10",
+    "stoker": "^1.4.2",
+    "zod": "^3.25.34"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.13.2",

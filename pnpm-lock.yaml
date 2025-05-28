@@ -11,9 +11,18 @@ importers:
       '@hono/node-server':
         specifier: ^1.14.3
         version: 1.14.3(hono@4.7.10)
+      '@hono/zod-openapi':
+        specifier: ^0.19.7
+        version: 0.19.7(hono@4.7.10)(zod@3.25.34)
       hono:
         specifier: ^4.7.10
         version: 4.7.10
+      stoker:
+        specifier: ^1.4.2
+        version: 1.4.2(@asteasolutions/zod-to-openapi@7.3.2(zod@3.25.34))(@hono/zod-openapi@0.19.7(hono@4.7.10)(zod@3.25.34))(hono@4.7.10)(openapi3-ts@4.4.0)
+      zod:
+        specifier: ^3.25.34
+        version: 3.25.34
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^4.13.2
@@ -87,6 +96,11 @@ packages:
 
   '@antfu/install-pkg@1.1.0':
     resolution: {integrity: sha512-MGQsmw10ZyI+EJo45CdSER4zEb+p31LpDAFp2Z3gkSd1yqVZGi0Ebx++YTEMonJy4oChEMLsxZ64j8FH6sSqtQ==}
+
+  '@asteasolutions/zod-to-openapi@7.3.2':
+    resolution: {integrity: sha512-Wvl+jHwSgYrRc3tQLMG7Qxq6wn0WjDk8E9ZA0lAyW73FqK18XPHVIKpk0lA6L0S+zmzzNKTndeV2v/Or0LyfHQ==}
+    peerDependencies:
+      zod: ^3.20.2
 
   '@babel/helper-string-parser@7.27.1':
     resolution: {integrity: sha512-qMlSxKbpRlAridDExk92nSobyDdpPijUq2DW6oDnUqd0iOGxmQjyqhMIihI9+zv4LPyZdRje2cavWPbCbWm3eA==}
@@ -357,6 +371,19 @@ packages:
     engines: {node: '>=18.14.1'}
     peerDependencies:
       hono: ^4
+
+  '@hono/zod-openapi@0.19.7':
+    resolution: {integrity: sha512-S1IgblPPwx6yLYbrvLS0MJlvtmZpD6mDn0NqN+hYndoPUtDNqjNW/J7EmFAQu1Od8fYdIrwogcRL2rMANcULvA==}
+    engines: {node: '>=16.0.0'}
+    peerDependencies:
+      hono: '>=4.3.6'
+      zod: 3.*
+
+  '@hono/zod-validator@0.6.0':
+    resolution: {integrity: sha512-3aVk+cvuOE/9D6H2ugaG1kt14NT9rFyZzwRW6+aaPhMufMSiyKNvb/7pscZ/U302F8cTPD2TSTJiOUmx6TPqGg==}
+    peerDependencies:
+      hono: '>=3.9.0'
+      zod: ^3.19.1
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -1378,6 +1405,9 @@ packages:
   nth-check@2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
 
+  openapi3-ts@4.4.0:
+    resolution: {integrity: sha512-9asTNB9IkKEzWMcHmVZE7Ts3kC9G7AFHfs8i7caD8HbI76gEjdkId4z/AkP83xdZsH7PLAnnbl47qZkXuxpArw==}
+
   optionator@0.9.4:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==}
     engines: {node: '>= 0.8.0'}
@@ -1547,6 +1577,17 @@ packages:
   stable-hash@0.0.5:
     resolution: {integrity: sha512-+L3ccpzibovGXFK+Ap/f8LOS0ahMrHTf3xu7mMLSpEGU0EO9ucaysSylKo9eRDFNhWve/y275iPmIZ4z39a9iA==}
 
+  stoker@1.4.2:
+    resolution: {integrity: sha512-zna86ZzC3fnMOIkuO+1vRMfcRw7SpC/7yafRb0u8DwDVig2pPh6POVnGB7t2A5t/rMvyr7hE7tjXTPvW8bhJKg==}
+    peerDependencies:
+      '@asteasolutions/zod-to-openapi': ^7.0.0
+      '@hono/zod-openapi': '>=0.16.0'
+      hono: ^4.0.0
+      openapi3-ts: ^4.4.0
+    peerDependenciesMeta:
+      '@hono/zod-openapi':
+        optional: true
+
   strip-indent@4.0.0:
     resolution: {integrity: sha512-mnVSV2l+Zv6BLpSD/8V87CW/y9EmmbYzGCIavsnsI6/nwn26DwffM/yztm30Z/I2DY9wdS3vXVCMnHDgZaVNoA==}
     engines: {node: '>=12'}
@@ -1678,6 +1719,9 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
+  zod@3.25.34:
+    resolution: {integrity: sha512-lZHvSc2PpWdcfpHlyB33HA9nqP16GpC9IpiG4lYq9jZCJVLZNnWd6Y1cj79bcLSBKTkxepfpjckPv5Y5VOPlwA==}
+
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
@@ -1735,6 +1779,11 @@ snapshots:
     dependencies:
       package-manager-detector: 1.3.0
       tinyexec: 1.0.1
+
+  '@asteasolutions/zod-to-openapi@7.3.2(zod@3.25.34)':
+    dependencies:
+      openapi3-ts: 4.4.0
+      zod: 3.25.34
 
   '@babel/helper-string-parser@7.27.1': {}
 
@@ -1947,6 +1996,18 @@ snapshots:
   '@hono/node-server@1.14.3(hono@4.7.10)':
     dependencies:
       hono: 4.7.10
+
+  '@hono/zod-openapi@0.19.7(hono@4.7.10)(zod@3.25.34)':
+    dependencies:
+      '@asteasolutions/zod-to-openapi': 7.3.2(zod@3.25.34)
+      '@hono/zod-validator': 0.6.0(hono@4.7.10)(zod@3.25.34)
+      hono: 4.7.10
+      zod: 3.25.34
+
+  '@hono/zod-validator@0.6.0(hono@4.7.10)(zod@3.25.34)':
+    dependencies:
+      hono: 4.7.10
+      zod: 3.25.34
 
   '@humanfs/core@0.19.1': {}
 
@@ -3209,6 +3270,10 @@ snapshots:
     dependencies:
       boolbase: 1.0.0
 
+  openapi3-ts@4.4.0:
+    dependencies:
+      yaml: 2.8.0
+
   optionator@0.9.4:
     dependencies:
       deep-is: 0.1.4
@@ -3357,6 +3422,14 @@ snapshots:
 
   stable-hash@0.0.5: {}
 
+  stoker@1.4.2(@asteasolutions/zod-to-openapi@7.3.2(zod@3.25.34))(@hono/zod-openapi@0.19.7(hono@4.7.10)(zod@3.25.34))(hono@4.7.10)(openapi3-ts@4.4.0):
+    dependencies:
+      '@asteasolutions/zod-to-openapi': 7.3.2(zod@3.25.34)
+      hono: 4.7.10
+      openapi3-ts: 4.4.0
+    optionalDependencies:
+      '@hono/zod-openapi': 0.19.7(hono@4.7.10)(zod@3.25.34)
+
   strip-indent@4.0.0:
     dependencies:
       min-indent: 1.0.1
@@ -3500,5 +3573,7 @@ snapshots:
   yaml@2.8.0: {}
 
   yocto-queue@0.1.0: {}
+
+  zod@3.25.34: {}
 
   zwitch@2.0.4: {}
