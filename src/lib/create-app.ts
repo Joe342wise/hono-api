@@ -1,15 +1,18 @@
 import { OpenAPIHono } from "@hono/zod-openapi";
 import { notFound, onError, serveEmojiFavicon } from "stoker/middlewares";
 
-import { pinoLogger } from "@/Middlewares/pino-logger.js";
+import { pinoLogger } from "@/Middlewares/pino-logger";
 
-import type { AppBindings } from "@/lib/types.js";
-import { fa } from "zod/v4/locales";
+import type { AppBindings } from "@/lib/types";
 
-export default function createApp() {
-    const app = new OpenAPIHono<AppBindings>({
+export function createRouter() {
+    return new OpenAPIHono<AppBindings>({
         strict: false,
     });
+}
+
+export default function createApp() {
+    const app = createRouter();
     app.use(serveEmojiFavicon("📝"));
     app.use(pinoLogger());
 
