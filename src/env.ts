@@ -18,7 +18,7 @@ try {
 }
 catch (e) {
     const error = e as z.ZodError;
-    console.error("Invalid environment variables:");
+    console.error("❌ Invalid environment variables:");
     console.error(error.flatten());
     process.exit(1);
 }
