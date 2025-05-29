@@ -1,5 +1,5 @@
 import { OpenAPIHono } from "@hono/zod-openapi";
-import { notFound, onError } from "stoker/middlewares";
+import { notFound, onError, serveEmojiFavicon } from "stoker/middlewares";
 
 import { pinoLogger } from "./Middlewares/pino-logger.js";
 import { PinoLogger } from "hono-pino";
@@ -12,6 +12,7 @@ type AppBindings = {
 };
 
 const app = new OpenAPIHono<AppBindings>();
+app.use(serveEmojiFavicon(""));
 app.use(pinoLogger());
 
 app.get("/", (c) => {
@@ -20,7 +21,7 @@ app.get("/", (c) => {
 
 app.get("/error", (c) => {
   c.status(500);
-  c.var.logger.info("wow log hear");
+  c.var.logger.debug("Only for testing");
   throw new Error("This is a test error");
 });
 
