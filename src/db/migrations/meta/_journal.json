@@ -15,6 +15,13 @@
       "when": 1748657231401,
       "tag": "0001_flimsy_ronan",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1748743854828,
+      "tag": "0002_ambiguous_night_thrasher",
+      "breakpoints": true
     }
   ]
 }
