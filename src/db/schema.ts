@@ -1,3 +1,4 @@
+import { createInsertSchema } from "drizzle-zod";
 import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
 import { z } from "zod";
 
@@ -19,3 +20,10 @@ export const selectTasksSchema = z.object({
     createAt: z.date(),
     updateAt: z.date(),
 });
+
+// Manual schema - guaranteed to work
+export const insertTasksSchema = createInsertSchema(tasks)
+    .required({
+        done: true,
+    })
+    .omit({ id: true, createAt: true, updateAt: true });
