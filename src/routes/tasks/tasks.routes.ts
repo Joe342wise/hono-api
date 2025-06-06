@@ -11,10 +11,10 @@ export const list = createRoute({
     tags,
     responses: {
         [HttpStatusCodes.OK]: jsonContent(
-            selectTasksSchema,
+            z.array(selectTasksSchema), // Wrap in z.array()
             "List of tasks",
         ),
     },
-})
+});
 
 export type ListRoute = typeof list;

@@ -1,5 +1,4 @@
 import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
-import { createInsertSchema, createSelectSchema } from "drizzle-zod";
 import { z } from "zod";
 
 export const tasks = sqliteTable("tasks", {
@@ -12,13 +11,11 @@ export const tasks = sqliteTable("tasks", {
         .$onUpdate(() => new Date()),
 });
 
-export const selectTasksSchema = createSelectSchema(tasks);
-
-// If above doesn't work, use this manual schema instead:
-// export const selectTasksSchema = z.object({
-//     id: z.number(),
-//     name: z.string(),
-//     done: z.boolean(),
-//     createAt: z.date(),
-//     updateAt: z.date(),
-// });
+// Manual schema - guaranteed to work
+export const selectTasksSchema = z.object({
+    id: z.number().int(),
+    name: z.string(),
+    done: z.boolean(),
+    createAt: z.date(),
+    updateAt: z.date(),
+});
